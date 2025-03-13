@@ -1,0 +1,1 @@
+# bicep-mod-storage-account
