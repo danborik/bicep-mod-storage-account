@@ -16,7 +16,7 @@ param name string
   'Standard_ZRS'
 ])
 @description('Optional. The SKU of the storage account. Defaults to Standard_LRS.')
-param skuName string = 'Standard_LRS'
+param skuName string = 'Standard_ZRS'
 
 @allowed([
   'BlobStorage'
