@@ -2,7 +2,7 @@ name: Publish Bicep Module to ACR
 
 on:
     release:
-        types: [created]
+        types: [published]
 
 permissions:
     contents: read
