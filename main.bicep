@@ -35,4 +35,7 @@ resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
     name: skuName
   }
   kind: kind
+  identity: {
+    type: 'SystemAssigned'
+  }
 }
