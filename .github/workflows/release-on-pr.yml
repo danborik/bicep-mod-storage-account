@@ -26,12 +26,11 @@ jobs:
           echo "::set-output name=tag::$TAG_NAME"
 
       - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
+          draft: false
+          token: ${{ secrets.PAT }}
           tag_name: ${{ steps.get_tag.outputs.tag }}
-          release_name: Release ${{ steps.get_tag.outputs.tag }}
+          name: Release ${{ steps.get_tag.outputs.tag }}
           body: |
             Release created for tag ${{ steps.get_tag.outputs.tag }}
