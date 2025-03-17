@@ -27,6 +27,8 @@ param skuName string = 'Standard_GRS'
 ])
 param kind string = 'StorageV2'
 
+param tags object = {}
+
 
 resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: name
@@ -38,4 +40,5 @@ resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   identity: {
     type: 'SystemAssigned'
   }
+  tags: tags
 }
