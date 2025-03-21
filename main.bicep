@@ -1,44 +1,19 @@
+/* ==========================================
 
-@description('Optional. Azure region where the resource should be created. Defaults to the resource group location.')
-param location string = resourceGroup().location
+  This is a main Bicep module file.
+  Put the all required Bicep code here to deploy module resources.
 
-@description('Required. The name of the storage account.')
-param name string
+  Keep the following Bicep code structure:
+  - Parameters
+  - Variables
+  - Resources / Modules
+  - Outputs
 
-@allowed([
-  'Premium_LRS'
-  'Premium_ZRS'
-  'Standard_GRS'
-  'Standard_GZRS'
-  'Standard_LRS'
-  'Standard_RAGRS'
-  'Standard_RAGZRS'
-  'Standard_ZRS'
-])
-@description('Optional. The SKU of the storage account. Defaults to Standard_LRS.')
-param skuName string = 'Standard_GRS'
-
-@allowed([
-  'BlobStorage'
-  'BlockBlobStorage'
-  'FileStorage'
-  'Storage'
-  'StorageV2'
-])
-param kind string = 'StorageV2'
-
-param tags object = {}
-
-
-resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
-  name: name
-  location: location
-  sku: {
-    name: skuName
-  }
-  kind: kind
-  identity: {
-    type: 'SystemAssigned'
-  }
-  tags: tags
-}
+  If the main module requires to deploy multiple resources, consider creating a separate Bicep file for each resource type and use modules to call them.
+  - Use the following naming convention for Bicep files:
+    - main.bicep for the main module
+    - Use submodule file structure:
+      - modules/<module-name>/main.bicep
+      - example: modules/virtual-network/main.bicep
+  
+   ========================================== */
