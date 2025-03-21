@@ -14,10 +14,13 @@ The repo contains just a single resource module because of the following benefit
 - Re-generate secrets with following names:
   - **PAT**: Personal Access Token (PAT) for *release-on-pr* Action
   - **AZURE_SPN_CRED**: Azure SPN credentials for Azure authentication
-
 - Update module name in *publish-to-acr* Action:
   - Replace default value of env **MODULE_NAME** with actual module name.
   - Use **\<module-name\>** convention.
+- README cleanup:
+  - Remove all template contents.
+  - Replace the top heading with module name.
+  - [Optional] Add relevant content (or wait for automatically generated content :).
 
 ## Repo rules & git workflow
 
