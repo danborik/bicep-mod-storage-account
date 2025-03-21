@@ -9,6 +9,8 @@ The repo contains just a single resource module because of the following benefit
 
 ## Required initial updates for all repos generated from this teplate
 
+- Re-create default branch protection rule:
+  - Can be imported from [this file](.github\protect-default-branch.json)
 - Re-generate secrets with following names:
   - **PAT**: Personal Access Token (PAT) for *release-on-pr* Action
   - **AZURE_SPN_CRED**: Azure SPN credentials for Azure authentication
